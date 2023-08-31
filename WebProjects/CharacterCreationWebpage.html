@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+   
+    <style>
+
+        #wrapper {
+                        background-color: rgb(17, 17, 17);
+                        width: 90%;
+                        margin: auto;
+                        margin-top: 25px;
+                        color: white;
+                        font-size: x-large;
+                    }
+
+        body {
+            background-color: rgba(10, 10, 10, 1000);
+        }
+
+        .error {
+            background-color: rgb(252, 50, 50);
+        }
+    </style>
+
+    <script>
+        function validate() {
+            let username = document.getElementById('characterUsername').value;
+            let usernameErr = document.getElementById('usernameErr');
+            let classErr = document.getElementById('classErr');
+            let ageErr = document.getElementById('ageErr');
+            let backstoryValue = document.getElementById('backstory').value;
+            let userEmail = document.getElementById('email').value;
+            let emailErr = document.getElementById('emailErr');
+           
+
+
+            if(username == '') {
+                usernameErr.innerHTML = 'Please enter a name for your Guardian'
+                characterUsername.className = 'error';
+                usernameErr.className = 'error';
+                return false;
+            } else if(username.length < 2 || username.length > 30) {
+                usernameErr.innerHTML = 'Your Guardians name must be between the size of 2 and 30'
+                characterUsername.className = 'error';
+                usernameErr.className = 'error';
+                return false;
+            }
+
+            if(document.getElementById('classSelection').checked == false) {
+                classErr.innerHTML = 'Please choose a class'
+                classSelection.className = 'error';
+                classErr.className = 'error';
+                return false;
+            }
+
+            if(backstoryValue == '') {
+                document.getElementById("backstory").value = "No memory."; 
+            
+            }
+
+            let ageValue = document.getElementById('guardianAge').value;
+            parseInt(ageValue);
+
+            if(ageValue == '') {
+                ageErr.innerHTML = 'Please enter your Guardians age';
+                guardianAge.className = 'error';
+                ageErr.className = 'error';
+                return false;
+            }
+            else if(ageValue < 18 || ageValue > 99) {
+                ageErr.innerHTML = 'Your Guardian must be between the ages of 18 and 99';
+                guardianAge.className = 'error';
+                ageErr.className = 'error';
+                return false;
+            }
+
+            if(userEmail == '') {
+                emailErr.innerHTML = 'Please enter your email';
+                userEmail.className = 'error';
+                emailErr.className = 'error';
+                return false;
+            }
+            else if(!(userEmail.includes('@')) ) {
+                emailErr.innerHTML = 'Your email must be in the format something@something.com';
+                userEmail.className = 'error';
+                emailErr.className = 'error';
+                return false;
+            }
+            
+            return true;
+
+        }
+    </script>
+
+
+    <head>
+        
+        <title>
+            Destiny Character Creation
+        </title>
+    </head>
+    <body>
+        
+        <div id="wrapper">
+
+        <h1>Character Creation</h1>
+        <form action="mailto:40326403@ads.qub.ac.uk" method="post" onsubmit="return validate();">
+        
+        <label for="characterUsername">Enter a name for your Guardian</label><br>
+        <input type="text" id="characterUsername">
+        <span id="usernameErr"></span><br><br>
+
+        <label for="classSelection">Choose a class</label>
+        <span id="classErr"></span><br>
+        <input type="radio" id="classSelection">
+        <label for="classSelection">Hunter</label><br>
+        <input type="radio" id="classSelection">
+        <label for="classSelection">Titan</label><br>
+        <input type="radio" id="classSelection">
+        <label for="classSelection">Warlock</label><br><br>
+
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select> <br><br>
+
+        <label for="race">Race</label>
+        <select id="race" name="race">
+          <option value="human">Human</option>
+          <option value="awoken">Awoken</option>
+          <option value="exo">Exo</option>
+        </select> <br><br>
+
+        <label for="guardianAge">Age</label><br>
+        <input type="text" id="guardianAge">
+        <span id="ageErr"></span><br><br>
+
+        <label for="email">Email</label><br>
+        <input type="text" id="email">
+        <span id="emailErr"></span><br><br>
+
+
+        <label for="backstory">Write a backstory for your Guardian before the fall (optional)</label><br>
+        <textarea id='backstory' name="backstory" style="width:350px; height:60px;"></textarea> <br><br>
+
+        <input type="submit" value="Create">
+        </form>
+    
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Destiny</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+        <style>
+
+            a:link {
+            color: #4adbff;
+            }
+
+            a:visited {
+            color: #0036aa;
+            }
+
+            a:hover {
+            color: #ff0000;
+            }
+
+            a:active {
+            color: #0000FF;
+            }
+            * {
+                margin: 0px;
+                padding: 0px; 
+                box-sizing: border-box;
+            }
+
+            body {
+                background-color: rgba(10, 10, 10, 1000);
+            }
+
+            #wrapper {
+                background-color: white;
+                width: 90%;
+                margin: auto;
+                margin-top: 25px;
+            }
+
+            #header {
+                background-color: rgb(17, 17, 17);
+                height: auto;
+                color: white;
+                font-family: monospace;
+            }
+
+            #row {
+                background-color: lightgreen;
+                display: table;
+                width: 100%;
+                
+            }
+
+            .col {
+                display: table-cell;
+                width: 33.3%;
+                background: white;
+            }
+            
+            #col1 {
+                padding-left: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                background-color: rgb(17, 17, 17);
+                color: white;
+            }
+
+            #col2 {
+                padding-left: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                background-color: rgb(17, 17, 17);
+                color: white;
+            }
+
+            #col3 {
+                padding-left: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                background-color: rgb(17, 17, 17);
+                color: white;
+            }
+
+
+            #footer {
+                padding-left: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                background-color: rgb(17, 17, 17);
+                color: white;
+            }
+
+            #guardian{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+            }
+
+            #guardians{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 90%;
+            }
+
+            #header_text {
+                text-align: center;
+                font-size: 80px;
+            }
+            
+            .align_middle {
+                text-align: center;
+                font-size: 35px;
+            }
+
+            .hunter_font {
+                font-family:'Bebas Neue', cursive, sans-serif;
+
+            }
+
+            .font{
+                font-family: monospace;
+            }
+            @media screen and (max-width: 800px) {
+                .col {
+                    display: block;
+                    width:100%;
+                }
+
+                #wrapper {
+                    width: 100%;
+                }
+            }
+        
+
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <h1 id = header_text>DESTINY </h1>
+            </div>
+            <div id="row">
+                <div class="col" id="col1">
+                    <p class="align_middle font">In Destiny you play a Guardian of the last city on Earth.</p>
+                    <img id="guardian" src="Images/Destiny_Guardian.jpg" alt="Guardians" >
+                    <p  class="align_middle font"> In-game you can create a character with one of the three classes:</p>
+                </div>
+            </div>
+            <div id="row">
+                <div class="col" id="col1">
+                    <p class="align_middle hunter_font">The Warlock</p>
+                    <img id="guardians" src="Images/destiny_warlock.jpg" alt="Warlock" >
+                </div>
+                <div class="col" id="col2">
+                    <p class="align_middle hunter_font">The Hunter</p>
+                    <img id="guardians" src="Images/destiny_hunter.jpg" alt="Hunter" >
+                </div>
+                <div class="col" id="col3">
+                    <p class="align_middle hunter_font">The Titan</p>
+                    <img id="guardians" src="Images/destiny_titan.jpg" alt="Titan" >
+
+                </div>
+            </div>
+            <div id="row">
+                <div class="col" id="col1">
+                    <p class="align_middle font">Embark on a quest or a story mission with your ghost companion and the powers of light, solo or 
+                        with friends, against increasingly powerful <a href="https://www.ign.com/wikis/destiny/Enemies" target="_blank">enemies</a>. Or join the crucible and test your skills against other players.
+                    </p>
+            <div id="footer">
+                <p  class="align_middle font" >
+                    <a href="https://www.bungie.net/" target="_blank">Play Destiny</a>
+                   Or <a href="https://en.wikipedia.org/wiki/Destiny_(video_game)" target="_blank"> Visit the Wikipedia</a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

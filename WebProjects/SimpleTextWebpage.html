@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Task 2</title>
+    </head>
+    <body>
+        <h1 id="heading1">Heading 1</h1>
+
+        <p id="para">Paragraph 1</p>
+
+        <p class="para1">Paragraph 2</p>
+        <p class="para1">Paragraph 3</p>
+        <p class="para1">Paragraph 4</p>
+        <p class="para1">Paragraph 5</p>
+
+        
+        <button type ="button" id="myBtn">Change font colour</button>
+
+        <script>
+
+        document.getElementById("heading1").style.fontFamily = 'Arial Narrow', 'Arial', 'sans-serif';
+        
+        document.getElementById("myBtn").addEventListener("click", changeCss);
+
+        
+        function changeCss() {
+            document.getElementById("para").style.color = "red";
+        }
+
+        let classElements = document.getElementsByClassName("para1");
+            for (let index = 0; index < classElements.length; index++) {
+                classElements[index].style.fontSize = "large";
+            }
+
+        </script>
+    </body>
+
+</html>
