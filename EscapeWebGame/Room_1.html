@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Beat The Bank - Office</title>
+        <link rel="stylesheet" href="cssCode.css">
+        <link rel="icon" href="images/icon.png">
+        <script src="javaScriptCode.js"></script>
+    </head>
+    <body onload="setUp(); startTimer();">
+        <div id="MenuBar">
+            <ul>
+                <li>
+                    <select onchange="resizeFont();" id="textSize" class="menu">
+                        <option disabled selected>Font Size</option>
+                        <option value="0.8em">Small</option>
+                        <option value="1em">Medium</option>
+                        <option value="1.5em">Large</option>
+                    </select>
+                </li>
+                <li><select onchange="changeMode();" id="mode" class="menu">
+                        <option disabled selected>Mode</option>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </li>
+                <li><button class="menu" onclick="quit();">Quit</button></li>
+            </ul>
+        </div>
+
+        <div id="wrapper">
+            <div id="storyIntro">
+                You open the door labeled office and find yourself in an office (wow!). Have a look around and see what you can find.
+            </div>
+
+            <div id="timerBar">
+                <img id="carTimer" src="images/PoliceCar.gif">
+                <img id="bankTimer" src="images/BankIcon.png">
+            </div>
+
+            <table id="game">
+                <tr>
+                    <td id="optionButtons">
+                        <select onchange="inspect();" id="inspect" class="inspect">
+                            <option disabled selected>Inspect</option>
+                            <option id="monitor" value="monitor">Monitor</option>
+                            <option value="keyboard">Keyboard</option>
+                            <option value="plantPots">Plant Pots</option>
+                            <option value="filingCabinets">Filing Cabinets</option>
+                            <option value="deskDrawers">Desk Drawers</option>
+                        </select>
+                        <button class="option" id="button3" onclick="nextPage('corridor.html');">Go back to corridor</button><br>
+                        
+                    </td>
+                    <div class="container">
+                    <td id="image" rowspan="2">
+                        <img id="room1Image" src="images/Room 1.png" alt="Room 1">
+                    </td>
+                    </div>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="inventory">
+                            <p>Inventory</p>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img src="images/BlueKey.png" class="keyButton" id="blueKey">
+                                    </td>
+                                    <td>
+                                        <img src="images/RedKey.png" class="keyButton" id="redKey">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="images/YellowKey.png" class="keyButton" id="yellowKey">
+                                    </td>
+                                    <td>
+                                        <img src="images/GreenKey.png"  class="keyButton" id="greenKey">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            </div>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Beat The Bank - Newspaper</title>
+        <link rel="stylesheet" href="cssCode.css">
+        <link rel="icon" href="images/icon.png">
+        <script src="javaScriptCode.js"></script>
+    </head>
+
+    <body onload="newspaper();">
+        <div id="MenuBar">
+            <ul>
+                <li>
+                    <select onchange="resizeFont();" id="textSize" class="menu">
+                        <option disabled selected>Font Size</option>
+                        <option value="0.8em">Small</option>
+                        <option value="1em">Medium</option>
+                        <option value="1.5em">Large</option>
+                    </select>
+                </li>
+                <li><select onchange="changeMode();" id="mode" class="menu">
+                        <option disabled selected>Mode</option>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </li>
+                <li><button class="menu" onclick="quit();">Play Again</button></li>
+            </ul>
+        </div>
+
+        <div id="wrapper">
+            <img id ="newspaper" src="images/Newspaper.png">
+
+            <table id="newspaper">
+                <tr>
+                    <td colspan="2"><h1 id="Headline"></h1></td>
+                </tr>
+                <tr>
+                    <td id="NewsIcon">
+                        <img id="base" src="" >
+                        <img id="outfit" src="">
+                        <img id="hair" src="">
+                    </td>
+                    <td id="leftStory">
+                        <p id="story"></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

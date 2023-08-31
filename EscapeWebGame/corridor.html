@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Beat The Bank - Corridor</title>
+        <link rel="stylesheet" href="cssCode.css">
+        <link rel="icon" href="images/icon.png">
+        <script src="javaScriptCode.js"></script>
+    </head>
+    <body onload="setUp(); startTimer();">
+        <div id="MenuBar">
+            <ul>
+                <li>
+                    <select onchange="resizeFont();" id="textSize" class="menu">
+                        <option disabled selected>Font Size</option>
+                        <option value="0.8em">Small</option>
+                        <option value="1em">Medium</option>
+                        <option value="1.5em">Large</option>
+                    </select>
+                </li>
+                <li><select onchange="changeMode();" id="mode" class="menu">
+                        <option disabled selected>Mode</option>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </li>
+                <li><button class="menu" onclick="quit();">Quit</button></li>
+            </ul>
+        </div>
+
+        <div id="wrapper">
+                <div id="storyIntro">
+                    You have managed to make your way to the back corridor of the bank. In front of you are two regular doors, and a large vault door. Upon further inspection, it seems that the vault requires a 4-digit code to unlock. Maybe there are some clues in the other rooms?
+                </div>
+
+                <div id="timerBar">
+                    <img id="carTimer" src="images/PoliceCar.gif">
+                    <img id="bankTimer" src="images/BankIcon.png">
+                </div>
+
+            <table id="game">
+                <tr>
+                    <td id="optionButtons">
+                        <button class="option" onclick="nextPage('Room_1.html');">Enter Room 1</button><br>
+                        <button class="option" onclick="nextPage('room2.html');">Enter Room 2</button><br>
+                        <button class="option" onclick="nextPage('VaultPassword.html');">Enter Vault</button><br>
+                        <button class="option" onclick="nextPage('Entrance.html');">Go Back</button>
+                    </td>
+                    
+                    <td id="image" rowspan="2">
+                        <img src="images/Corridor.png" alt="Corridor">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="inventory">
+                            <p>Inventory</p>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img src="images/BlueKey.png" class="keyButton" id="blueKey">
+                                    </td>
+                                    <td>
+                                        <img src="images/RedKey.png" class="keyButton" id="redKey">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="images/YellowKey.png" class="keyButton" id="yellowKey">
+                                    </td>
+                                    <td>
+                                        <img src="images/GreenKey.png" class="keyButton" id="greenKey">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

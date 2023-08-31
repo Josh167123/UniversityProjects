@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Newspaper Flash Alert</title>
+        <!--link to css code-->
+        <link rel="stylesheet" href="cssCode.css">
+
+        <!--link to java script code-->
+        <script src="javaScriptCode.js"></script>
+    </head>
+
+    <body onload = "setUp();">
+
+        <!--menu bar with options at top of page-->
+        <div id="MenuBar">
+            <ul>
+                <li><select onchange="changeContrast();" class="menu">
+                        <option disabled selected>Contrast</option>
+                        <option value="high">High</option>
+                        <option value="low">Low</option>
+                    </select>
+                </li>
+                <li>
+                    <select onchange="resizeFont();" id="textSize" class="menu">
+                        <option disabled selected>Font Size</option>
+                        <option value="0.8em">Small</option>
+                        <option value="1em">Medium</option>
+                        <option value="1.5em">Large</option>
+                    </select>
+                </li>
+                <li><select onchange="changeMode();" id="mode" class="menu">
+                        <option disabled selected>Mode</option>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </li>
+                <li><button class="menu" onclick="quit();">Quit</button></li>
+            </ul>
+        </div>
+
+       <!--introduction text to newspaper flash-->
+        <div id="wrapper">
+            <div class="text" id="storyIntro">
+                <h1>Newspaper Flash!</h1>
+                <div class="successful" id="success">
+                <!--Option 1-->
+                <p hidden>Major Bank in town has lost £1.5 million to a successful break in!</p>
+                <!--(break in successfully)-->
+                </div>
+
+                <div class="unsuccessful" id="failure">
+                <!--Option 2-->
+                <p hidden>Bank Robber caught empty handed at Bank</p>
+                <!--(unsuccessful break in)-->
+                </div>
+            </div>
+
+        <!--option buttons with locations to quit and restart game-->
+        <div class="row">
+            <div id="optionButtons">
+                <button onclick="quit();">Exit Game</button>
+                <button onclick="nextPage('MainMenu.html'); sessionStorage.setItem('timeRem', 80);">Play Again</button>
+            </div>
+
+        <!--insert newspaper flash-->
+            <div id="image">
+                <img src="images/Newspaper.png" alt="Newspaper flash">
+            </div>
+        </div>
+        </div>
+    </body>
+</html>

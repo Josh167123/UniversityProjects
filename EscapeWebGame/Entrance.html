@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Beat The Bank - Outside</title>
+        <link rel="stylesheet" href="cssCode.css">
+        <link rel="icon" href="images/icon.png">
+        <script src="javaScriptCode.js"></script>
+    </head>
+    <body onload="setUp(); startTimer();">
+        <div id="MenuBar">
+            <ul>
+                <li>
+                    <select onchange="resizeFont();" id="textSize" class="menu">
+                        <option disabled selected>Font Size</option>
+                        <option value="0.8em">Small</option>
+                        <option value="1em">Medium</option>
+                        <option value="1.5em">Large</option>
+                    </select>
+                </li>
+                <li><select onchange="changeMode();" id="mode" class="menu">
+                        <option disabled selected>Mode</option>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </li>
+                <li><button class="menu" onclick="quit();">Quit</button></li>
+            </ul>
+        </div>
+
+        <div id="wrapper">
+                <div id="storyIntro" >
+                    Welcome to the bank, <span id="bank"></span>. You need to find a way in, and make your way to the vault. Make your decisions carefully, and keep an eye out for the police!
+                </div>
+
+                <div id="timerBar">
+                    <img id="carTimer" src="images/PoliceCar.gif">
+                    <img id="bankTimer" src="images/BankIcon.png">
+                </div>
+
+            <table id="game">
+                <tr>
+                    <td id="optionButtons">
+                        <button class="option" onclick="quit();">Walk away</button><br>
+                        <button class="option" onclick="nextPage('runningAnimation.html'); sessionStorage.setItem('door', 'front')">Walk in front door</button><br>
+                        <button class="option" onclick="nextPage('runningAnimation.html'); sessionStorage.setItem('door', 'back')">Walk in back door</button><br>
+                    </td>
+                    
+                    <td id="image" rowspan="2">
+                        <img src="images/Entrance.png" alt="Bank_Entrance">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="inventory">
+                            <p>Inventory</p>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img src="images/BlueKey.png" class="keyButton" id="blueKey">
+                                    </td>
+                                    <td>
+                                        <img src="images/RedKey.png" class="keyButton" id="redKey">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="images/YellowKey.png" class="keyButton" id="yellowKey">
+                                    </td>
+                                    <td>
+                                        <img src="images/GreenKey.png"  class="keyButton" id="greenKey">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

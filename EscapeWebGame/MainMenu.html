@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Beat The Bank - Main Menu</title>
+        <link rel="stylesheet" href="cssCode.css">
+        <link rel="icon" href="images/icon.png">
+        <script src="javaScriptCode.js"></script>
+    </head>
+
+    <body onload = "setUp();">
+        <div id="MenuBar">
+            <ul>
+                <li>
+                    <select onchange="resizeFont();" id="textSize" class="menu">
+                        <option disabled selected>Font Size</option>
+                        <option value="0.8em">Small</option>
+                        <option value="1em">Medium</option>
+                        <option value="1.5em">Large</option>
+                    </select>
+                </li>
+                <li><select onchange="changeMode();" id="mode" class="menu">
+                        <option disabled selected>Mode</option>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </li>
+                <li><button class="menu" onclick="quit();">Quit</button></li>
+            </ul>
+        </div>
+
+        <div id="wrapper">
+            <div class="text" id="storyIntro">
+                <p class="text" id="description">Welcome to Beat The Bank. Here, you will design your character, and name the bank you want to rob. Make sure to read the tooltips for each outfit, they might help you plan your heist! Good luck!</p>
+            </div>
+
+            <div id="inputs">
+                <form name="playerName" onsubmit="return validateName();" autocomplete="off">
+                    <table>
+                        <tr>
+                            <td><p class="text">Enter your name:</p></td>
+                        </tr>
+                        <tr>
+                            <td><input name="nameInput" type="text" class="input"></td>
+                            <td><p id="blankName">*This field is required</p></td>
+                        </tr>
+                    </table>
+                </form>
+
+                <form name="bankName" onsubmit="return validateBank();" autocomplete="off">
+                    <table>
+                        <tr>
+                            <td><p class="text">Name the Bank:</p></td>
+                        </tr>
+                        <tr>
+                            <td><input name="bankInput" type="text" class="input"></td>
+                            <td><p id="blankBank">*This field is required</p></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+
+            <table>
+                <tr>
+                    <td id="leftCol">
+                        <div id="optionButtons">
+                            <button class="option" onclick="changeHair(-1);">Previous Hairstyle</button><br>
+                            <button class="option" onclick="changeHair(1);">Next Hairstyle</button><br>
+                            <button class="option" onclick="changeOutfit(-1);">Previous Outfit</button><br>
+                            <button class="option" onclick="changeOutfit(1);">Next Outfit</button><br>
+                            <button class="option" onclick="startGame();">Start Game</button>
+                        </div>
+                    </td>
+                    <td id="rightCol">
+                        <img id="base" src="images/Player.png" alt="Default Player">
+                        <img id="outfit" src="">
+                        <img id="hair" src="">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+
+</html>

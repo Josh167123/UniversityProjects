@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inside The Vault</title>
+        <!--link to css code-->
+        <link rel="stylesheet" href="cssCode.css">
+        
+        <!--link to java script code-->
+        <script src="javaScriptCode.js"></script>
+    </head>
+
+    <body onload = "setUp(); startTimer();">
+
+        <!--menu bar with options at top of page-->
+        <div id="MenuBar">
+            <ul>
+                <li>
+                    <select onchange="resizeFont();" id="textSize" class="menu">
+                        <option disabled selected>Font Size</option>
+                        <option value="0.8em">Small</option>
+                        <option value="1em">Medium</option>
+                        <option value="1.5em">Large</option>
+                    </select>
+                </li>
+                <li><select onchange="changeMode();" id="mode" class="menu">
+                        <option disabled selected>Mode</option>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </li>
+                <li><button class="menu" onclick="quit();">Quit</button></li>
+            </ul>
+        </div>
+
+        <!--introduction text to inside vault-->
+        <div id= "wrapper">
+            <div class="text" id="storyIntro">
+                <h1>Welcome to the Bank's Vault</h1>
+                <h2>Here all the towns money is stored safely until now.....</h2>
+            </div>
+            
+            <!-- timer bar-->
+            <div id="timerBar">
+                <img id="carTimer" src="images/PoliceCar.gif">
+                <img id="bankTimer" src="images/BankIcon.png">
+            </div>
+
+            <!--option buttons with actions and locations-->
+            <div class="row">
+                <div id="optionButtons">
+                    <button class="option">Explore Vault</button>
+                    <button class="option">Open drawers</button>
+                    <button class="option" onclick="quit();">Leave Vault</button>
+                    <button class="option" onclick="nextPage('MainMenu.html');">Return to Main Menu</button>
+                </div>
+
+            <!--insert vault image-->
+                <div id="image">
+                    <img src="images/Vault.png" alt="Inside Vault">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

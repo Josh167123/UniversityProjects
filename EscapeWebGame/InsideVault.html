@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Beat The Bank - Vault</title>
+        <link rel="stylesheet" href="cssCode.css">
+        <script src="javaScriptCode.js"></script>
+    </head>
+
+    <body onload = "setUp(); startTimer(); vaultFunctionality();">
+        <div id="MenuBar">
+            <ul>
+                <li>
+                    <select onchange="resizeFont();" id="textSize" class="menu">
+                        <option disabled selected>Font Size</option>
+                        <option value="0.8em">Small</option>
+                        <option value="1em">Medium</option>
+                        <option value="1.5em">Large</option>
+                    </select>
+                </li>
+                <li><select onchange="changeMode();" id="mode" class="menu">
+                        <option disabled selected>Mode</option>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </li>
+                <li><button class="menu" onclick="quit();">Quit</button></li>
+            </ul>
+        </div>
+
+        <div id= "wrapper">
+            <div id="storyIntro">
+                You have made it to the vault inside <span id="bank"></span>. Take as much money as you can, but watch out for the police!
+            </div>
+
+            <div id="timerBar">
+                <img id="carTimer" src="images/PoliceCar.gif">
+                <link rel="icon" href="images/icon.png">
+                <img id="bankTimer" src="images/BankIcon.png">
+            </div>
+
+            <div id="score">
+                <p>£<span id="money">0</span></p>
+            </div>
+
+            <table id="game">
+                <tr>
+                    <td id="optionButtons">
+                        <button class="option" onclick="takeMoney();">Take Some Money</button><br>
+                        <button class="option" onclick="successful();">Escape</button><br>
+                        <button class="option" onclick="nextPage('corridor.html');">Exit Vault</button><br>
+                    </td>
+                    
+                    <td id="image" rowspan="2">
+                        <img src="images/Vault.png" alt="Inside The Vault">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="inventory">
+                            <p>Inventory</p>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img src="images/BlueKey.png" onclick="openSafe('blue');" class="keyButton" id="blueKey">
+                                    </td>
+                                    <td>
+                                        <img src="images/RedKey.png" onclick="openSafe('red');" class="keyButton" id="redKey">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="images/YellowKey.png" onclick="openSafe('yellow');" class="keyButton" id="yellowKey">
+                                    </td>
+                                    <td>
+                                        <img src="images/GreenKey.png" onclick="openSafe('green');" class="keyButton" id="greenKey">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
